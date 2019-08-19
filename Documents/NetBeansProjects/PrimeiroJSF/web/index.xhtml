@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"	
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head><title>JSF</title>
+	<link href="estilo.css" rel="stylesheet" type="text/css"/> 
+</h:head>
+<h:body>
+<div align="center">
+<table class="title">
+  <tr><th>Compra de Produtos Utilizando JSF</th></tr>
+</table>
+<p/>
+<fieldset>
+<legend>Tela de requisição</legend>
+<h:form>
+<table>
+	<tr>
+		<td>Item Number: <h:inputText value="#{productBean.id}" id="id" required="true" 
+    		requiredMessage="Entre com id" converterMessage="Deve ser número"/></td>
+    	<td><h:message for="id" styleClass="error"/></td>
+    </tr>
+    <tr>
+    	<td>Quantity: <h:inputText value="#{productBean.quantity}" id="quantity" required="true"
+    		requiredMessage="Entre com quantidade" converterMessage="Deve ser número"/></td>
+    	<td><h:message for="quantity" styleClass="error"/></td>
+    </tr> 
+  	<tr>
+  		<td>Price Each:<h:inputText value="#{productBean.price}" id="price" required="true"
+  			requiredMessage="Entre com preço" converterMessage="Deve ser número"/></td>
+  		<td><h:message for="price" styleClass="error"/></td>	
+  	</tr> 
+  	<tr><td>Name:<h:inputText value="#{productBean.name}" id="name" required="true"
+  		requiredMessage="Entre com nome"/></td>
+  		<td><h:message for="name" styleClass="error"/></td>
+  	</tr>
+ 	<tr><td>Shipping Address:<h:inputTextarea rows="3" cols="40" value="#{shippingBean.address}" id="address"
+ 		required="true" requiredMessage="Entre com endereço"/></td>
+ 		<td><h:message for="address" styleClass="error"/></td>
+ 	</tr>
+  	<tr><td>Credit Card:<br />
+  		<h:selectOneRadio value="#{shippingBean.cardType}" id="cardType"
+  			required="true" requiredMessage="Escolhe entre opções oferecidas">     	
+    		<f:selectItem itemLabel="Visa" itemValue="Visa"></f:selectItem>
+    		<f:selectItem itemLabel="MasterCard" itemValue="MasterCard"></f:selectItem>
+    		<f:selectItem itemLabel="Amex" itemValue="Amex"></f:selectItem>
+    		<f:selectItem itemLabel="Discover" itemValue="Discover"></f:selectItem>
+    		<f:selectItem itemLabel="Java SmartCard" itemValue="Java SmartCard"></f:selectItem>
+    	</h:selectOneRadio></td>
+    	<td><h:message for="cardType" styleClass="error"/></td>
+    </tr>   	
+	<tr><td>Credit Card Number:<h:inputSecret value="#{shippingBean.cardNumber}" id="cardNumber" required="true" 
+		requiredMessage="Entre com número de cartão de crédito" converterMessage="Deve ser número"/></td>
+		<td><h:message for="cardNumber" styleClass="error"/></td>
+  	</tr>
+	<tr><td>Repeat Credit Card Number:<h:inputSecret value="#{shippingBean.repetedCardNumber}" id="repetedCardNumber" 
+		required="true" requiredMessage="Repita número de cartão de crédito" converterMessage="Deve ser número"/></td>
+		<td><h:message for="repetedCardNumber" styleClass="error"/></td>
+	</tr>
+  
+  	<tr><td><h:commandButton value="Submit Order" action="Resposta.xhtml"/></td></tr>
+  
+</table> 
+</h:form>
+
+</fieldset>
+</div></h:body></html>
+
