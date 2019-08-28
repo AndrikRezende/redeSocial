@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"	
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+<title>#{msgs1.tituloCadastro}</title>
+<link href="Estilo.css" rel="stylesheet" type="text/css"/> 
+</h:head>
+<h:body>
+<br />
+<f:view locale="#{formSettings.locale}">
+<div id="centro" class="nivel1">
+    <h:form>
+	<h:commandButton value="#{msgs1.outraLinguagem}" actionListener="#{formSettings.swapLocale1}"
+		immediate="true"/>
+    </h:form>
+</div>
+<div id="direita" class="nivel2"><a href="index.xhtml">#{msgs1.linkInicial}</a></div>
+<br />
+<br />
+<br />
+<h:form id="centro">
+	#{msgs1.nome} <h:inputText value="#{pessoaBean.nome}" id="nome" required="true"
+		requiredMessage="#{msgs1.erroNome}"/>
+	<br />	
+	<h:message for="nome" styleClass="error"/>		
+	<br />
+	#{msgs1.email} <h:inputText value="#{pessoaBean.email}" id="email" required="true"
+		requiredMessage="#{msgs1.erroEmail}"/>
+	<br />	
+	<h:message for="email" styleClass="error"/>		
+	<br />
+	#{msgs1.senha} <h:inputSecret value="#{pessoaBean.senha}" id="senha" required="true"
+		requiredMessage="#{msgs1.erroSenha}"/>
+	<br />	
+	<h:message for="senha" styleClass="error"/>		
+	<br />
+	#{msgs1.confirmaSenha} <h:inputSecret value="#{pessoaBean.confirmarSenha}" id="confirmaSenha" required="true"
+		requiredMessage="#{msgs1.erroConfirmaSenha}"/>
+	<br />	
+	<h:message for="confirmaSenha" styleClass="error"/>		
+	<br />
+	<h:commandButton value="#{msgs1.botaoCadastro}" action="verificacaoCadastro.xhtml"/>
+</h:form>
+</f:view>
+</h:body>
+</html>

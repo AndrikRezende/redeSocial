@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"	
+      xmlns:h="http://java.sun.com/jsf/html">
+    
+<h:head>
+<title>#{msgs1.tituloInicial}</title>
+<link href="Estilo.css" rel="stylesheet" type="text/css"/> 
+</h:head>
+<h:body>
+<br />
+<f:view locale="#{formSettings.locale}">
+<div id="centro" class="nivel1">
+    <h:form>
+	<h:commandButton value="#{msgs1.outraLinguagem}" actionListener="#{formSettings.swapLocale1}" 
+		immediate="true"/>
+    </h:form>
+</div>
+<div id="direita" class="nivel2"><a href="faces/Cadastro.xhtml">#{msgs1.linkCadastro}</a></div>
+<br />
+<br />
+<br />
+
+<h:form id="centro">
+	#{msgs1.email} <h:inputText value="#{pessoaBean.email}" id="email" required="true"
+		requiredMessage="#{msgs1.erroEmail}" />
+	<br />	
+	<h:message for="email" styleClass="error"/>	
+	<br />
+	#{msgs1.senha} <h:inputSecret value="#{pessoaBean.senha}" id="senha" required="true"
+		requiredMessage="#{msgs1.erroSenha}"/>
+	<br />	
+	<h:message for="senha" styleClass="error"/>		
+	<br />
+	<h:commandButton value="#{msgs1.entrar}" action="verificacaoLogin.xhtml"/>
+</h:form>
+</f:view>
+</h:body>
+</html>
+

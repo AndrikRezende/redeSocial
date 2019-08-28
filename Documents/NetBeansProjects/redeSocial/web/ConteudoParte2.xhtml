@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"	
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+<title>#{msgs1.sistema}</title>
+<link href="Estilo.css" rel="stylesheet" type="text/css"/> 
+</h:head>
+<h:body>
+<br />
+<f:view locale="#{formSettings.locale}">
+
+<div id="centro" class="nivel1">
+    <h:form>
+	<h:commandButton value="#{msgs1.outraLinguagem}" actionListener="#{formSettings.swapLocale1}"
+		immediate="true"/>
+    </h:form>
+</div>
+
+<div id="esquerda" class="nivel2">#{pessoaBean.nome}</div>
+<div id="direita" class="nivel2"><a href="sair.xhtml">#{msgs1.sair}</a></div>
+
+<div id="esquerda" ><a href="Conteudo.xhtml">#{msgs1.linkMensagem}</a></div>
+
+<div id="centro">
+<p>#{tituloPessoasCadastradas}:</p>
+<br />
+<p>#{sistemaBean.mostrarPessoasCadastrados(pessoaBean.nome)}</p>
+</div>
+</f:view>
+</h:body>
+</html>
